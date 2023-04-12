@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AgroVision</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'agrovision/public/agro_vision.png' %}">
+
+<!--    <link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+    <div id="app"></div>
+<!--    <script src="script.js"></script>-->
+    <script src="{% static 'agrovision/dist/main.js' %}"></script>
+<!--Get folder for static assesets-->
+    var static_global_folder= "{% static 'public/library/' %}"
+
+</body>
+</html>
