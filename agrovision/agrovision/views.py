@@ -35,15 +35,19 @@ import sys
 import shutil
 import math
 from datetime import datetime
-
+from agrovision.utils.nc_analyzer import NCAnalyzer as nca
 
 @csrf_protect
 def index(request):
-    context = {
-        "param": {"farm_ids": "test"}
-    }
+    context = {}
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
-def get_data(request):
 
-    return JsonResponse({"response": "valid"})
+
+def get_data(request):
+    request_json = js.loads(request.body)
+    print(request_json)
+    net = nca()
+    net.get_nc_data(request_json["variable"])
+    yearly_stat = net.run_stat("average")
+    return JsonResponse({"response": yearly_stat})

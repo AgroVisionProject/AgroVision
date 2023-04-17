@@ -7,7 +7,7 @@ Date: 3-31-2023
 from netCDF4 import Dataset
 
 
-class NCOpener:
+class NCHandler:
     """
     Opens a netcdf file.
     Args:
